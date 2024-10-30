@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Coiny-Regular";
+  src: url("assets/fonts/Coiny-Regular.ttf");
+}
+
+@font-face {
+  font-family: "GiveYouGlory-Regular";
+  src: url("assets/fonts/GiveYouGlory-Regular.ttf");
+}
+
+@layer utilities {
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
