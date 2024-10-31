@@ -25,6 +25,9 @@ module.exports = {
 				desktop: '1280px',
 				xl: '1440px',
 			},
+			aspectRatio: {
+				'card': '3/4',
+			},
 		},
 	},
 	plugins: [],
