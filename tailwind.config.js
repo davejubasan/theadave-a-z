@@ -28,6 +28,18 @@ module.exports = {
 			aspectRatio: {
 				'card': '3/4',
 			},
+			animation: {
+				'gradient-bg': 'gradient 3s ease infinite',
+			},
+			keyframes: {
+				gradient: {
+					'0%, 100%': { 'background-position': '0% 50%' },
+					'50%': { 'background-position': '100% 50%' },
+				},
+			},
+			backgroundSize: {
+				'gradient-size': '150% 105%',
+			},
 		},
 	},
 	plugins: [],
