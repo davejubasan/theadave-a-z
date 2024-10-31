@@ -13,6 +13,11 @@
   src: url("assets/fonts/GiveYouGlory-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Charmonman-Regular";
+  src: url("assets/fonts/Charmonman-Regular.ttf");
+}
+
 @layer utilities {
   /* For Webkit-based browsers (Chrome, Safari and Opera) */
   .no-scrollbar::-webkit-scrollbar {
