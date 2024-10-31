@@ -1,7 +1,16 @@
 <main
-  class="flex h-screen w-screen flex-col items-center justify-center gap-14 px-6 py-14 md:flex-row-reverse md:gap-28 laptop:gap-52 desktop:gap-64"
+  class="relative flex h-screen w-screen flex-col items-center justify-center gap-14 px-6 py-14 md:flex-row-reverse md:gap-28 laptop:gap-52 desktop:gap-64"
 >
-  <app-card />
+  <div class="w-64 shadow-2xl md:w-72 lg:w-96">
+    <swiper-container class="" effect="cards" grab-cursor="true">
+      @for (data of cardData; track $index) {
+        <swiper-slide class="rounded-2xl">
+          <app-card [cardData]="data" />
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
   <app-title />
 
   <div
