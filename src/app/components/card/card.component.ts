@@ -8,5 +8,5 @@ import { ICard } from '../../models/ICard';
   templateUrl: './card.component.html',
 })
 export class CardComponent {
-  @Input() cardData: ICard | null = null;
+  @Input({ required: true }) cardData: ICard | null = null;
 }

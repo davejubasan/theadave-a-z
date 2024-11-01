@@ -1,8 +1,15 @@
 <main
-  class="relative flex h-screen w-screen flex-col items-center justify-center gap-14 px-6 py-14 md:flex-row-reverse md:gap-28 laptop:gap-52 desktop:gap-64"
+  class="relative flex h-screen w-screen flex-col items-center justify-center gap-8 px-6 py-14 md:flex-row-reverse md:gap-16 laptop:gap-20 desktop:gap-60"
 >
-  <div class="w-64 shadow-2xl md:w-72 lg:w-96">
-    <swiper-container class="" effect="cards" grab-cursor="true">
+  <div class="w-64 md:w-72 lg:w-96">
+    <swiper-container
+      #swiper
+      class="swiper"
+      effect="cards"
+      slideShadows="false"
+      grab-cursor="true"
+      (swiperslidechange)="onSlideChange()"
+    >
       @for (data of cardData; track $index) {
         <swiper-slide class="rounded-2xl">
           <app-card [cardData]="data" />
@@ -11,7 +18,19 @@
     </swiper-container>
   </div>
 
-  <app-title />
+  <section class="flex max-w-[26rem] flex-col gap-6 md:gap-12">
+    <app-title />
+    <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+      @for (letter of letters; track $index) {
+        <app-letters
+          (slideToLetterEvent)="slideTo(letter)"
+          (activeIndexEvent)="updateActiveIndex()"
+          [activeIndex]="activeIndex"
+          [data]="letter"
+        />
+      }
+    </div>
+  </section>
 
   <div
     class="absolute bottom-0 left-0 right-0 top-0 -z-10 h-screen w-screen bg-[url('../public/assets/images/main-bg.jpg')] bg-cover bg-center opacity-10"

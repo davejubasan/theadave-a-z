@@ -1,1 +1,11 @@
-<p>A</p>
+<span
+  class="block aspect-square h-8 w-8 rounded-md border-[1.5px] border-white transition-all hover:scale-110 active:scale-95 md:h-10 md:w-10"
+  [ngClass]="activeIndex === data?.index ? 'bg-white bg-opacity-10' : ''"
+  (click)="slideToLetter()"
+>
+  <button
+    class="aspect-square h-full w-full pt-1 text-center font-coiny text-xl leading-none text-white md:text-3xl"
+  >
+    {{ data?.letter }}
+  </button>
+</span>
