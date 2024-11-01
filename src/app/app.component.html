@@ -1,5 +1,5 @@
 <main
-  class="relative flex h-screen w-screen flex-col items-center justify-center gap-8 px-6 py-14 md:flex-row-reverse md:gap-16 laptop:gap-20 desktop:gap-60"
+  class="relative flex h-screen w-screen flex-col items-center justify-center gap-8 overflow-hidden px-6 py-14 md:flex-row-reverse md:gap-16 laptop:gap-20 desktop:gap-60"
 >
   <div class="w-64 md:w-72 lg:w-96">
     <swiper-container
@@ -33,7 +33,10 @@
   </section>
 
   <div
-    class="absolute bottom-0 left-0 right-0 top-0 -z-10 h-screen w-screen bg-[url('../public/assets/images/main-bg.jpg')] bg-cover bg-center opacity-10"
+    [ngStyle]="{
+      'background-image': 'url(assets/images/cards/' + backgroundImage + ')',
+    }"
+    class="animate-scale absolute bottom-0 left-0 right-0 top-0 -z-10 h-screen w-screen bg-cover bg-center opacity-10"
   ></div>
 
   <div

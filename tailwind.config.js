@@ -30,11 +30,16 @@ module.exports = {
 			},
 			animation: {
 				'gradient-bg': 'gradient 3s ease infinite',
+				'scale': 'scale 20s ease-in-out infinite',
 			},
 			keyframes: {
 				gradient: {
 					'0%, 100%': { 'background-position': '0% 50%' },
 					'50%': { 'background-position': '100% 50%' },
+				},
+				scale: {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.2)' },
 				},
 			},
 			backgroundSize: {
