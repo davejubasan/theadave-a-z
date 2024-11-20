@@ -2,6 +2,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
+  HostListener,
   ViewChild,
 } from '@angular/core';
 import { CardComponent } from './components/card/card.component';
@@ -46,6 +47,14 @@ export class AppComponent {
   onSlideChange() {
     this.updateActiveIndex();
     this.updateBgImage();
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  slideViewKeyboard(event: KeyboardEvent): void {
+    if (event.key === 'ArrowRight')
+      this.swiperRef?.nativeElement.swiper.slideNext();
+    else if (event.key === 'ArrowLeft')
+      this.swiperRef?.nativeElement.swiper.slidePrev();
   }
 
   private getActiveIndex(): number {
