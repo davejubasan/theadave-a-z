@@ -5,12 +5,17 @@
 
 @font-face {
   font-family: "Coiny-Regular";
-  src: url("assets/fonts/Coiny-Regular.ttf");
+  src: url("../public/assets/fonts/Coiny-Regular.ttf");
 }
 
 @font-face {
   font-family: "GiveYouGlory-Regular";
-  src: url("assets/fonts/GiveYouGlory-Regular.ttf");
+  src: url("../public/assets/fonts/GiveYouGlory-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Charmonman-Regular";
+  src: url("../public/assets/fonts/Charmonman-Regular.ttf");
 }
 
 @layer utilities {

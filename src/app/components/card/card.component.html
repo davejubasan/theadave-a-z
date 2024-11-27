@@ -1,1 +1,22 @@
-<p class="font-coiny">A-Z</p>
+<div
+  class="group relative flex aspect-card w-full cursor-grab items-start justify-center overflow-clip rounded-2xl border-4 border-white bg-white shadow-2xl active:cursor-grabbing"
+>
+  <div
+    class="z-10 flex flex-col items-center justify-center gap-2 px-6 pt-12 md:pt-16 lg:pt-24"
+  >
+    <p
+      class="animate-gradient-bg select-none bg-gradient-to-t from-color-a to-color-b bg-gradient-size bg-clip-text text-center font-coiny text-9xl leading-none text-transparent md:text-[9.5rem] lg:text-[11rem]"
+    >
+      {{ cardData?.letter }}
+    </p>
+    <p
+      class="select-none text-center font-give-you-glory text-2xl md:text-[1.60rem] lg:text-4xl lg:leading-[3.5rem]"
+    >
+      {{ cardData?.body }}
+    </p>
+  </div>
+  <img
+    [src]="'assets/images/cards/' + cardData?.image"
+    class="absolute z-0 aspect-card self-center rounded-2xl opacity-15 blur-[1px] grayscale-[50%] transition-all group-hover:scale-125 group-hover:blur-0 group-hover:grayscale-0"
+  />
+</div>
