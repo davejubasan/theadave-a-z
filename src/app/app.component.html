@@ -1,7 +1,11 @@
 <main
   class="relative flex h-screen w-screen flex-col items-center justify-center gap-8 overflow-hidden px-6 py-14 md:flex-row-reverse md:gap-16 laptop:gap-20 desktop:gap-60"
 >
-  <div class="w-64 md:w-72 lg:w-96">
+  <div
+    class="w-64 md:w-72 lg:w-96"
+    (mouseenter)="playBackgroundMusic()"
+    (touchstart)="playBackgroundMusic()"
+  >
     <swiper-container
       #swiper
       class="swiper"
@@ -42,4 +46,11 @@
   <div
     class="absolute bottom-0 left-0 right-0 top-0 -z-20 h-screen w-screen animate-gradient-bg bg-gradient-to-tl from-color-a to-color-b bg-gradient-size"
   ></div>
+
+  <audio #backgroundAudio loop autoplay muted>
+    <source
+      src="assets/Babe, You're the One - Piano Version.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
 </main>

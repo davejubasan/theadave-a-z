@@ -23,6 +23,8 @@ import { NgStyle } from '@angular/common';
 })
 export class AppComponent {
   @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
+  @ViewChild('backgroundAudio') backgroundAudio!: ElementRef<HTMLAudioElement>;
+
   cardData: ICard[] = data;
   letters: LettersType[] = data.map((card, index) => ({
     letter: card.letter,
@@ -30,6 +32,31 @@ export class AppComponent {
   }));
   activeIndex: number = 0;
   backgroundImage: string = 'card-a.png'; // change to default
+
+  ngAfterViewInit(): void {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        this.playBackgroundMusic();
+      } else {
+        this.pauseBackgroundMusic();
+      }
+    });
+  }
+
+  playBackgroundMusic(): void {
+    const audio = this.backgroundAudio.nativeElement;
+    audio.muted = false;
+    audio
+      .play()
+      .then(() => console.log('Audio resumed as tab became active'))
+      .catch((error) => console.error('Error resuming audio:', error));
+  }
+
+  pauseBackgroundMusic(): void {
+    const audio = this.backgroundAudio.nativeElement;
+    audio.muted = true;
+    audio.pause();
+  }
 
   slideTo(letter: LettersType): void {
     if (letter.index !== this.getActiveIndex())
