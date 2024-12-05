@@ -1,0 +1,33 @@
+<div
+  *ngIf="!isValid"
+  class="disable-select absolute bottom-0 left-0 right-0 top-0 z-10 grid place-content-center items-center bg-white"
+>
+  <div class="flex animate-slideUp flex-col gap-2">
+    @if (hasError) {
+      <p
+        class="animate-slideUp justify-center text-center font-sans italic text-red-900"
+      >
+        {{ errorMessage }}
+      </p>
+    }
+    <div
+      class="animate-gradient-bg rounded-lg bg-gradient-to-tl from-color-a to-color-b bg-gradient-size p-1"
+    >
+      <input
+        class="disable-select rounded-md px-4 py-2 text-center font-sans text-lg font-bold tracking-wider text-neutral-600 outline-none placeholder:font-sans placeholder:font-normal placeholder:tracking-normal"
+        type="text"
+        spellcheck="false"
+        name="code"
+        placeholder="Enter code"
+        id="code"
+        [(ngModel)]="code"
+      />
+    </div>
+    <input
+      class="focus animate-gradient-bg rounded-lg bg-gradient-to-tl from-color-a to-color-b bg-gradient-size px-4 py-3 font-sans text-lg font-bold uppercase text-white outline-none hover:cursor-pointer"
+      type="button"
+      value="Submit"
+      (click)="submitCode()"
+    />
+  </div>
+</div>

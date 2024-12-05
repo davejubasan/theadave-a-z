@@ -13,17 +13,25 @@ import { SwiperContainer } from 'swiper/element';
 import { LettersComponent } from './components/letters/letters.component';
 import { LettersType } from './models/LettersType';
 import { NgStyle } from '@angular/common';
+import { VerificationComponent } from './components/verification/verification.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CardComponent, TitleComponent, LettersComponent, NgStyle],
+  imports: [
+    CardComponent,
+    TitleComponent,
+    LettersComponent,
+    VerificationComponent,
+    NgStyle,
+  ],
   templateUrl: './app.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
   @ViewChild('backgroundAudio') backgroundAudio!: ElementRef<HTMLAudioElement>;
+  @ViewChild('cards') cards!: ElementRef;
 
   cardData: ICard[] = data;
   letters: LettersType[] = data.map((card, index) => ({
@@ -34,12 +42,13 @@ export class AppComponent {
   backgroundImage: string = 'card-a.png'; // change to default
 
   ngAfterViewInit(): void {
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') {
+    this.cards.nativeElement.addEventListener('visibilitychange', () => {
+      if (this.cards.nativeElement.visibilityState === 'visible')
         this.playBackgroundMusic();
-      } else {
-        this.pauseBackgroundMusic();
-      }
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState != 'visible') this.pauseBackgroundMusic();
     });
   }
 

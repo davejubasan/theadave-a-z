@@ -1,7 +1,9 @@
 <main
   class="relative flex h-screen w-screen flex-col items-center justify-center gap-8 overflow-hidden px-6 py-14 md:flex-row-reverse md:gap-16 laptop:gap-20 desktop:gap-60"
 >
+  <app-verification />
   <div
+    #cards
     class="w-64 md:w-72 lg:w-96"
     (mouseenter)="playBackgroundMusic()"
     (touchstart)="playBackgroundMusic()"

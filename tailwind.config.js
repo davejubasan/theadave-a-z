@@ -8,7 +8,8 @@ module.exports = {
 			fontFamily: {
 				"coiny": ["Coiny-Regular"],
 				"give-you-glory": ["GiveYouGlory-Regular"],
-				"charmonman": ["Charmonman-Regular"]
+				"charmonman": ["Charmonman-Regular"],
+				"sans": "Arial, ui-sans-serif, system-ui, sans-serif"
 			},
 			colors: {
 				"color-a": "#6447E3",
@@ -31,6 +32,7 @@ module.exports = {
 			animation: {
 				'gradient-bg': 'gradient 3s ease infinite',
 				'scale': 'scale 20s ease-in-out infinite',
+        'slideUp': 'slideUp 0.3s ease-out',
 			},
 			keyframes: {
 				gradient: {
@@ -41,6 +43,10 @@ module.exports = {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.2)' },
 				},
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
 			},
 			backgroundSize: {
 				'gradient-size': '150% 105%',
