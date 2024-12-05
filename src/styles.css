@@ -29,4 +29,21 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .disable-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  ::-moz-selection {
+    color: white;
+    background: #6447E3;
+  }
+
+  ::selection {
+    color: white;
+    background: #6447E3;
+  }
 }
